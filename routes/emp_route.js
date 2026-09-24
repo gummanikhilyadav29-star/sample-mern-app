@@ -1,7 +1,12 @@
 let express=require('express');
 let router=express.Router()
-router.post("/register",(req,res)=>{
-    res.send("register route called");
+let {users}=require('../models/user');
+
+router.post("/register",async(req,res)=>{
+    let data=req.body;
+    let newuser=new users(data);
+    let result=await newuser.save();
+    res.send(result);
 })
 router.post("/login",(req,res)=>{
     res.send("login router called");

@@ -12,4 +12,4 @@ router.delete("/deleteemp",(req,res)=>{
 router.get("/viewtask",(req,res)=>{
     res.send("viewtask router called");
 })
-module.exports=routers;
+module.exports=router;
